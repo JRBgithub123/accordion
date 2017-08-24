@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>this讲解</title>
+		<style type="text/css">
+
+			html,
+			body,
+			div,
+			ul,li {
+				margin: 0;
+				padding: 0;
+			}
+
+			.top img {
+				width: 100%;
+			}
+
+			.accordion {
+				width: 1200px;
+				height: 260px;
+				margin: 50px auto 0;
+			}
+			.accordion ul {
+				width: 1220px;
+				height: 100%;
+			}
+			.accordion ul li {
+				float: left;
+				position:relative;
+				width: 200px;
+				height: 100%;
+				list-style: none;
+			}
+			.accordion ul li .intro {
+				position:absolute;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.4);
+			}
+			.accordion li .intro p {
+				width: 30px;
+				font-size: 30px;
+				font-family: 'Microsoft Yahei';
+				margin: 30px auto 0;
+				color: #eee;
+			}
+			.accordion ul li .bg-img {
+				width: 100%;
+				height: 100%;
+				background-position:center ;
+			}
+
+			.box {
+				width: 100px;
+				height: 100px;
+				margin-bottom: 100px;
+				background-color: #c33;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!--top -->
+			<div class="top">
+				<img src="img/top.png"/>
+			</div>
+
+			<!-- accordion-->
+			<div class="accordion">
+				<ul>
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/1.jpg) ">
+
+						</div>
+					</li>
+
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/2.jpg) ">
+
+						</div>
+					</li>
+
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/3.jpg) ">
+
+						</div>
+					</li>
+
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/4.jpg) ">
+
+						</div>
+					</li>
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/5.jpg) ">
+
+						</div>
+					</li>
+
+					<li>
+						<div class="intro">
+							<p>园林酒店</p>
+						</div>
+						<div class="bg-img"  style="background-image:url(img/6.jpg) ">
+
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+			$(function() {
+
+				//鼠标移上去触发该事件
+				$(".accordion li").mouseenter(function () {
+
+					$(this).find(".intro").hide();
+					$(this).stop(true).animate({
+						width: 400
+					}).siblings().stop(true).animate({width: 160})
+				})
+
+				//鼠标离开触发该事件
+				$(".accordion li").mouseleave(function () {
+
+					$(this).find(".intro").show();
+					$(".accordion li").stop(true).animate({width: 200});
+
+				})
+			})
+
+			$(".")
+
+
+
+
+			/*
+				//还可以用hover()方法
+				$(".accordion li").hover(
+						function(){
+							$(this).find(".intro").hide();
+
+							$(this).stop(true).animate({
+								width:400
+							}).siblings().stop(true).animate({width:160});
+
+						},
+
+						function(){
+							$(this).find(".intro").show();
+							$(".accordion li").stop(true).animate({width:200})
+						}
+
+				)
+			})
+			*/
+
+		</script>
+
+	</body>
+</html>
